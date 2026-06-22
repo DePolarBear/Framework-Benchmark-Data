@@ -1,8 +1,4 @@
 ---------------------------------------------FastAPI RASPI---------------------------------------
-ranny@raspberrypi:~ $ chmod +x run_bench_vegeta.sh
-./run_bench_vegeta.sh fastapi 8000 192.168.100.98 vc
-Benchmark v2 (vegeta MAX) â€” fastapi proti 192.168.100.98:8000
-
 â•â•â• ping (GET /api/ping) â€” MAX test â•â•â•
   monitor PID=28481
   âś“ 4761 req/s | success 100.0% | p50=39.97ms p99=95.75ms
@@ -34,13 +30,7 @@ hello     39.246  68.736   78.422   98.064
 echo      50.518  89.247   102.572  131.261
 heavy     87.378  140.159  157.796  192.435
 
-Stiahni monitor CSV:
-  scp vc@192.168.100.98:/home/vc/benchmark_fastapi/'monitor_vegeta_fastapi_*_20260619_120914.csv' results_vegeta_fastapi_20260619_120914/
-
 ---------------------------------------------Django RASPI----------------------------------------
-ranny@raspberrypi:~ $ ./run_bench_vegeta.sh django 8001 192.168.100.98 vc
-Benchmark v2 (vegeta MAX) â€” django proti 192.168.100.98:8001
-
 â•â•â• ping (GET /api/ping) â€” MAX test â•â•â•
   monitor PID=47358
   âś“ 549 req/s | success 100.0% | p50=335.75ms p99=739.31ms
@@ -72,13 +62,7 @@ hello     353.130  513.147  565.322  685.576
 echo      369.646  496.896  542.068  635.411
 heavy     388.762  598.058  665.634  771.912
 
-Stiahni monitor CSV:
-  scp vc@192.168.100.98:/home/vc/benchmark_django/'monitor_vegeta_django_*_20260619_122424.csv' results_vegeta_django_20260619_122424/
-
 ---------------------------------------------Django Tuned RASPI--------------------------------------
-ranny@raspberrypi:~ $ ./run_bench_vegeta.sh django_tuned 8002 192.168.100.98 vc
-Benchmark v2 (vegeta MAX) â€” django_tuned proti 192.168.100.98:8002
-
 â•â•â• ping (GET /api/ping) â€” MAX test â•â•â•
   monitor PID=322729
   âś“ 1415 req/s | success 100.0% | p50=137.67ms p99=264.20ms
@@ -109,7 +93,3 @@ ping      137.675  191.293  210.937  264.198
 hello     140.725  192.086  211.828  268.637
 echo      145.410  196.520  217.043  273.099
 heavy     185.521  247.016  268.228  319.991
-
-Stiahni monitor CSV:
-  scp vc@192.168.100.98:/home/vc/benchmark_django_tuned/'monitor_vegeta_django_tuned_*_20260619_124214.csv' results_vegeta_django_tuned_20260619_124214/
-
