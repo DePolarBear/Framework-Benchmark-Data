@@ -13,7 +13,7 @@ This is an extension of an earlier study (v1) that compared the two frameworks o
 | x86 server | AMD Ryzen 7 (8 c / 16 t) | x86-64 |
 | ARM server | ARM Cortex-A76 (4 cores) | AArch64 |
 
-**Frameworks:** FastAPI · Django (default middleware) · Django (tuned, no middleware) — all served via Uvicorn (12 workers).
+**Frameworks:** FastAPI · Django (default middleware) · Django (tuned, no middleware) - all served via Uvicorn (12 workers).
 
 **Endpoints:** `ping`, `hello`, `echo` (POST), `heavy` (CPU-bound), `ws` (WebSocket echo).
 
@@ -55,7 +55,7 @@ Naming convention: `PLATFORM_FRAMEWORK_type.csv` (e.g. `ASUS_FASTAPI_summary.csv
 
 ## Data columns
 
-**HTTP summary** — `endpoint, method, requests_per_sec, success_ratio, latency_mean_ms, latency_max_ms, total_requests`
+**HTTP summary** - `endpoint, method, requests_per_sec, success_ratio, latency_mean_ms, latency_max_ms, total_requests`
 
 **HTTP latency percentiles** - `endpoint, p50_ms, p90_ms, p95_ms, p99_ms`
 
