@@ -1,0 +1,221 @@
+---------------------------------------------FastAPI ASUS----------------------------------------------------------------
+ranny@raspberrypi:~ $ ulimit -n 65535
+./run_ws_bench.sh fastapi 8000 192.168.100.95
+WebSocket benchmark (k6) â€” fastapi proti ws://192.168.100.95:8000/ws
+Stupne spojenĂ­: 10 50 100 200 500 1000
+
+â•â•â• fastapi | 10 sĂşbeĹľnĂ˝ch spojenĂ­ â•â•â•
+     checks................: 100.00% âś“ 10         âś— 0   
+   âś“ ws_connecting.........: avg=1.94ms   min=1.4ms med=1.81ms max=2.77ms p(90)=2.69ms p(95)=2.73ms
+     ws_msgs_received......: 11990   99.911717/s
+     ws_msgs_recv..........: 11990   99.911717/s
+     ws_msgs_sent..........: 23986   199.873431/s
+     ws_rtt................: avg=817.59Âµs min=0s    med=1ms    max=3ms    p(90)=1ms    p(95)=1ms   
+  âś“ 10 spojenĂ­: rtt p50=1.0ms p99=0.0ms, 100 sprĂˇv/s
+  ... pauza 15s
+â•â•â• fastapi | 50 sĂşbeĹľnĂ˝ch spojenĂ­ â•â•â•
+     checks................: 100.00% âś“ 50         âś— 0   
+   âś“ ws_connecting.........: avg=4.54ms   min=2.6ms med=4.46ms max=8.98ms p(90)=5.64ms p(95)=6.09ms
+     ws_msgs_received......: 59955   499.576434/s
+     ws_msgs_recv..........: 59955   499.576434/s
+     ws_msgs_sent..........: 119930  999.319518/s
+     ws_rtt................: avg=815.84Âµs min=0s    med=1ms    max=6ms    p(90)=1ms    p(95)=2ms   
+  âś“ 50 spojenĂ­: rtt p50=1.0ms p99=0.0ms, 500 sprĂˇv/s
+  ... pauza 15s
+â•â•â• fastapi | 100 sĂşbeĹľnĂ˝ch spojenĂ­ â•â•â•
+     checks................: 100.00% âś“ 100         âś— 0    
+   âś“ ws_connecting.........: avg=9.62ms   min=2.22ms med=10.12ms max=16.79ms p(90)=14.7ms p(95)=14.99ms
+     ws_msgs_received......: 119912  999.086299/s
+     ws_msgs_recv..........: 119912  999.086299/s
+     ws_msgs_sent..........: 239898  1998.789153/s
+     ws_rtt................: avg=189.99ms min=0s     med=1ms     max=6.69s   p(90)=1ms    p(95)=723ms  
+  âś“ 100 spojenĂ­: rtt p50=1.0ms p99=0.0ms, 999 sprĂˇv/s
+  ... pauza 15s
+â•â•â• fastapi | 200 sĂşbeĹľnĂ˝ch spojenĂ­ â•â•â•
+     checks................: 100.00% âś“ 200         âś— 0    
+   âś“ ws_connecting.........: avg=16.41ms  min=2.1ms med=17.5ms max=28.09ms p(90)=24.52ms p(95)=25.84ms
+     ws_msgs_received......: 239844  1998.13305/s
+     ws_msgs_recv..........: 239844  1998.13305/s
+     ws_msgs_sent..........: 479782  3997.049211/s
+     ws_rtt................: avg=594.46Âµs min=0s    med=0s     max=22ms    p(90)=1ms     p(95)=2ms    
+  âś“ 200 spojenĂ­: rtt p50=0.0ms p99=0.0ms, 1999 sprĂˇv/s
+  ... pauza 15s
+â•â•â• fastapi | 500 sĂşbeĹľnĂ˝ch spojenĂ­ â•â•â•
+     checks................: 100.00% âś“ 500         âś— 0    
+   âś“ ws_connecting.........: avg=42.09ms  min=7.34ms med=42.46ms max=99.95ms p(90)=78.04ms p(95)=92.26ms
+     ws_msgs_received......: 599551  4991.749982/s
+     ws_msgs_recv..........: 599551  4991.749982/s
+     ws_msgs_sent..........: 1199418 9986.13092/s
+     ws_rtt................: avg=866.68Âµs min=0s     med=1ms     max=42ms    p(90)=2ms     p(95)=2ms    
+  âś“ 500 spojenĂ­: rtt p50=1.0ms p99=0.0ms, 4996 sprĂˇv/s
+  ... pauza 15s
+â•â•â• fastapi | 1000 sĂşbeĹľnĂ˝ch spojenĂ­ â•â•â•
+     checks................: 100.00% âś“ 1000        âś— 0     
+   âś“ ws_connecting.........: avg=29.04ms  min=972.54Âµs med=10.11ms max=110.28ms p(90)=94.58ms p(95)=99.08ms
+     ws_msgs_received......: 1199045 9977.290188/s
+     ws_msgs_recv..........: 1199045 9977.290188/s
+     ws_msgs_sent..........: 2398898 19961.30377/s
+     ws_rtt................: avg=833.62Âµs min=0s       med=1ms     max=88ms     p(90)=1ms     p(95)=2ms    
+  âś“ 1000 spojenĂ­: rtt p50=1.0ms p99=0.0ms, 9992 sprĂˇv/s
+  ... pauza 15s
+
+â•â•â• HOTOVO â•â•â•
+framework  connections  duration_s  msgs_sent  msgs_recv  msgs_per_s  rtt_avg_ms  rtt_p50_ms  rtt_p90_ms  rtt_p95_ms  rtt_p99_ms  ws_conn_p95_ms  handshake_ok_rate
+fastapi    10           120         23986      11990      99.9        0.82        1.00        1.00        1.00        0.00        2.73            10.000
+fastapi    50           120         119930     59955      499.6       0.82        1.00        1.00        2.00        0.00        6.10            50.000
+fastapi    100          120         239898     119912     999.3       189.99      1.00        1.00        723.00      0.00        14.99           100.000
+fastapi    200          120         479782     239844     1998.7      0.59        0.00        1.00        2.00        0.00        25.84           200.000
+fastapi    500          120         1199418    599551     4996.3      0.87        1.00        2.00        2.00        0.00        92.26           500.000
+fastapi    1000         120         2398898    1199045    9992.0      0.83        1.00        1.00        2.00        0.00        99.09           1000.000
+
+SĂşhrn: results_ws_fastapi_20260620_114609/ws_summary.csv
+JSON vĂ˝stupy: results_ws_fastapi_20260620_114609/ws_*.json
+
+
+---------------------------------------------Django ASUS-----------------------------------------------------------------
+ranny@raspberrypi:~ $ ulimit -n 65535
+./run_ws_bench.sh django 8001 192.168.100.95
+WebSocket benchmark (k6) â€” django proti ws://192.168.100.95:8001/ws
+Stupne spojenĂ­: 10 50 100 200 500 1000
+
+â•â•â• django | 10 sĂşbeĹľnĂ˝ch spojenĂ­ â•â•â•
+     checks................: 100.00% âś“ 10         âś— 0   
+   âś“ ws_connecting.........: avg=3.56ms min=3.15ms med=3.53ms max=4.05ms p(90)=3.95ms p(95)=4ms 
+     ws_msgs_received......: 11990   99.911636/s
+     ws_msgs_recv..........: 11990   99.911636/s
+     ws_msgs_sent..........: 23992   199.923268/s
+     ws_rtt................: avg=1.51ms min=0s     med=2ms    max=11ms   p(90)=2ms    p(95)=2ms 
+  âś“ 10 spojenĂ­: rtt p50=2.0ms p99=0.0ms, 100 sprĂˇv/s
+  ... pauza 15s
+â•â•â• django | 50 sĂşbeĹľnĂ˝ch spojenĂ­ â•â•â•
+     checks................: 100.00% âś“ 50         âś— 0   
+   âś“ ws_connecting.........: avg=4.88ms  min=3.44ms med=4.75ms max=6.67ms p(90)=6.14ms p(95)=6.3ms
+     ws_msgs_received......: 59952   499.543622/s
+     ws_msgs_recv..........: 59952   499.543622/s
+     ws_msgs_sent..........: 119950  999.470533/s
+     ws_rtt................: avg=969.4Âµs min=0s     med=1ms    max=5ms    p(90)=2ms    p(95)=2ms  
+  âś“ 50 spojenĂ­: rtt p50=1.0ms p99=0.0ms, 500 sprĂˇv/s
+  ... pauza 15s
+â•â•â• django | 100 sĂşbeĹľnĂ˝ch spojenĂ­ â•â•â•
+     checks................: 100.00% âś“ 100        âś— 0    
+   âś“ ws_connecting.........: avg=7.54ms   min=2.36ms med=7.62ms max=12.18ms p(90)=9.81ms p(95)=10.36ms
+     ws_msgs_received......: 119900  999.05033/s
+     ws_msgs_recv..........: 119900  999.05033/s
+     ws_msgs_sent..........: 239906  1998.98389/s
+     ws_rtt................: avg=858.48Âµs min=0s     med=1ms    max=15ms    p(90)=1ms    p(95)=2ms    
+  âś“ 100 spojenĂ­: rtt p50=1.0ms p99=0.0ms, 999 sprĂˇv/s
+  ... pauza 15s
+â•â•â• django | 200 sĂşbeĹľnĂ˝ch spojenĂ­ â•â•â•
+     checks................: 100.00% âś“ 200         âś— 0    
+   âś“ ws_connecting.........: avg=16.05ms  min=6.31ms med=15.81ms max=28.15ms p(90)=22.11ms p(95)=22.83ms
+     ws_msgs_received......: 239808  1997.874973/s
+     ws_msgs_recv..........: 239808  1997.874973/s
+     ws_msgs_sent..........: 479734  3996.73302/s
+     ws_rtt................: avg=620.74Âµs min=0s     med=1ms     max=18ms    p(90)=1ms     p(95)=1ms    
+  âś“ 200 spojenĂ­: rtt p50=1.0ms p99=0.0ms, 1998 sprĂˇv/s
+  ... pauza 15s
+â•â•â• django | 500 sĂşbeĹľnĂ˝ch spojenĂ­ â•â•â•
+     checks................: 100.00% âś“ 500         âś— 0    
+   âś“ ws_connecting.........: avg=51.58ms min=14.65ms med=58.86ms max=95.07ms p(90)=79.55ms p(95)=84ms
+     ws_msgs_received......: 599504  4991.395034/s
+     ws_msgs_recv..........: 599504  4991.395034/s
+     ws_msgs_sent..........: 1199374 9985.837339/s
+     ws_rtt................: avg=1.87ms  min=0s      med=2ms     max=42ms    p(90)=4ms     p(95)=4ms 
+  âś“ 500 spojenĂ­: rtt p50=2.0ms p99=0.0ms, 4996 sprĂˇv/s
+  ... pauza 15s
+â•â•â• django | 1000 sĂşbeĹľnĂ˝ch spojenĂ­ â•â•â•
+     checks................: 100.00% âś“ 1000         âś— 0     
+   âś“ ws_connecting.........: avg=71.87ms min=11.39ms med=62.02ms max=153.87ms p(90)=137.41ms p(95)=144.6ms
+     ws_msgs_received......: 1199010 9975.547536/s
+     ws_msgs_recv..........: 1199010 9975.547536/s
+     ws_msgs_sent..........: 2398704 19956.785829/s
+     ws_rtt................: avg=3.13ms  min=0s      med=2ms     max=82ms     p(90)=7ms      p(95)=8ms    
+  âś“ 1000 spojenĂ­: rtt p50=2.0ms p99=0.0ms, 9992 sprĂˇv/s
+  ... pauza 15s
+
+â•â•â• HOTOVO â•â•â•
+framework  connections  duration_s  msgs_sent  msgs_recv  msgs_per_s  rtt_avg_ms  rtt_p50_ms  rtt_p90_ms  rtt_p95_ms  rtt_p99_ms  ws_conn_p95_ms  handshake_ok_rate
+django     10           120         23992      11990      99.9        1.51        2.00        2.00        2.00        0.00        4.00            10.000
+django     50           120         119950     59952      499.6       0.97        1.00        2.00        2.00        0.00        6.31            50.000
+django     100          120         239906     119900     999.2       0.86        1.00        1.00        2.00        0.00        10.36           100.000
+django     200          120         479734     239808     1998.4      0.62        1.00        1.00        1.00        0.00        22.84           200.000
+django     500          120         1199374    599504     4995.9      1.87        2.00        4.00        4.00        0.00        84.00           500.000
+django     1000         120         2398704    1199010    9991.8      3.13        2.00        7.00        8.00        0.00        144.60          1000.000
+
+SĂşhrn: results_ws_django_20260620_120213/ws_summary.csv
+JSON vĂ˝stupy: results_ws_django_20260620_120213/ws_*.json
+
+
+---------------------------------------------Django tuned ASUS-----------------------------------------------------------
+ranny@raspberrypi:~ $ ulimit -n 65535
+./run_ws_bench.sh django_tuned 8002 192.168.100.95
+WebSocket benchmark (k6) â€” django_tuned proti ws://192.168.100.95:8002/ws
+Stupne spojenĂ­: 10 50 100 200 500 1000
+
+â•â•â• django_tuned | 10 sĂşbeĹľnĂ˝ch spojenĂ­ â•â•â•
+     checks................: 100.00% âś“ 10         âś— 0   
+   âś“ ws_connecting.........: avg=4.12ms min=3.83ms med=4.09ms max=4.6ms p(90)=4.5ms p(95)=4.55ms
+     ws_msgs_received......: 11990   99.911733/s
+     ws_msgs_recv..........: 11990   99.911733/s
+     ws_msgs_sent..........: 23990   199.906796/s
+     ws_rtt................: avg=1.31ms min=0s     med=1ms    max=5ms   p(90)=2ms   p(95)=2ms   
+  âś“ 10 spojenĂ­: rtt p50=1.0ms p99=0.0ms, 100 sprĂˇv/s
+  ... pauza 15s
+â•â•â• django_tuned | 50 sĂşbeĹľnĂ˝ch spojenĂ­ â•â•â•
+     checks................: 100.00% âś“ 50         âś— 0   
+   âś“ ws_connecting.........: avg=4.5ms    min=2ms  med=4.51ms max=7.82ms p(90)=6.33ms p(95)=7.11ms
+     ws_msgs_received......: 59950   499.539662/s
+     ws_msgs_recv..........: 59950   499.539662/s
+     ws_msgs_sent..........: 119960  999.579281/s
+     ws_rtt................: avg=894.64Âµs min=0s   med=1ms    max=6ms    p(90)=2ms    p(95)=2ms   
+  âś“ 50 spojenĂ­: rtt p50=1.0ms p99=0.0ms, 500 sprĂˇv/s
+  ... pauza 15s
+â•â•â• django_tuned | 100 sĂşbeĹľnĂ˝ch spojenĂ­ â•â•â•
+     checks................: 100.00% âś“ 100         âś— 0    
+   âś“ ws_connecting.........: avg=13.83ms min=3ms  med=16.06ms max=22.48ms p(90)=20.69ms p(95)=21.18ms
+     ws_msgs_received......: 119900  998.956344/s
+     ws_msgs_recv..........: 119900  998.956344/s
+     ws_msgs_sent..........: 239898  1998.729182/s
+     ws_rtt................: avg=1.38ms  min=0s   med=1ms     max=12ms    p(90)=2ms     p(95)=3ms    
+  âś“ 100 spojenĂ­: rtt p50=1.0ms p99=0.0ms, 999 sprĂˇv/s
+  ... pauza 15s
+â•â•â• django_tuned | 200 sĂşbeĹľnĂ˝ch spojenĂ­ â•â•â•
+     checks................: 100.00% âś“ 200         âś— 0    
+   âś“ ws_connecting.........: avg=15.95ms min=3.66ms med=15.41ms max=27.74ms p(90)=24.55ms p(95)=25.7ms
+     ws_msgs_received......: 239800  1997.822117/s
+     ws_msgs_recv..........: 239800  1997.822117/s
+     ws_msgs_sent..........: 479748  3996.877251/s
+     ws_rtt................: avg=1.4ms   min=0s     med=1ms     max=24ms    p(90)=2ms     p(95)=3ms   
+  âś“ 200 spojenĂ­: rtt p50=1.0ms p99=0.0ms, 1998 sprĂˇv/s
+  ... pauza 15s
+â•â•â• django_tuned | 500 sĂşbeĹľnĂ˝ch spojenĂ­ â•â•â•
+     checks................: 100.00% âś“ 500         âś— 0    
+   âś“ ws_connecting.........: avg=46.96ms min=6.18ms med=44.73ms max=102.59ms p(90)=76.68ms p(95)=79.41ms
+     ws_msgs_received......: 599505  4991.120319/s
+     ws_msgs_recv..........: 599505  4991.120319/s
+     ws_msgs_sent..........: 1199484 9986.186879/s
+     ws_rtt................: avg=1.6ms   min=0s     med=1ms     max=24ms     p(90)=3ms     p(95)=4ms    
+  âś“ 500 spojenĂ­: rtt p50=1.0ms p99=0.0ms, 4996 sprĂˇv/s
+  ... pauza 15s
+â•â•â• django_tuned | 1000 sĂşbeĹľnĂ˝ch spojenĂ­ â•â•â•
+     checks................: 100.00% âś“ 1000         âś— 0     
+   âś“ ws_connecting.........: avg=94.5ms min=30.29ms med=91.33ms max=176.21ms p(90)=148.44ms p(95)=161.87ms
+     ws_msgs_received......: 1199004 9975.864085/s
+     ws_msgs_recv..........: 1199004 9975.864085/s
+     ws_msgs_sent..........: 2398588 19956.553842/s
+     ws_rtt................: avg=4.82ms min=0s      med=4ms     max=75ms     p(90)=9ms      p(95)=10ms    
+  âś“ 1000 spojenĂ­: rtt p50=4.0ms p99=0.0ms, 9992 sprĂˇv/s
+  ... pauza 15s
+
+â•â•â• HOTOVO â•â•â•
+framework     connections  duration_s  msgs_sent  msgs_recv  msgs_per_s  rtt_avg_ms  rtt_p50_ms  rtt_p90_ms  rtt_p95_ms  rtt_p99_ms  ws_conn_p95_ms  handshake_ok_rate
+django_tuned  10           120         23990      11990      99.9        1.31        1.00        2.00        2.00        0.00        4.55            10.000
+django_tuned  50           120         119960     59950      499.6       0.89        1.00        2.00        2.00        0.00        7.12            50.000
+django_tuned  100          120         239898     119900     999.2       1.38        1.00        2.00        3.00        0.00        21.19           100.000
+django_tuned  200          120         479748     239800     1998.3      1.40        1.00        2.00        3.00        0.00        25.70           200.000
+django_tuned  500          120         1199484    599505     4995.9      1.60        1.00        3.00        4.00        0.00        79.41           500.000
+django_tuned  1000         120         2398588    1199004    9991.7      4.83        4.00        9.00        10.00       0.00        161.88          1000.000
+
+SĂşhrn: results_ws_django_tuned_20260620_121730/ws_summary.csv
+JSON vĂ˝stupy: results_ws_django_tuned_20260620_121730/ws_*.json
+
