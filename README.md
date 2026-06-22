@@ -1,4 +1,4 @@
-# Framework Benchmark Data — FastAPI vs Django (x86 vs ARM)
+# Framework Benchmark Data - FastAPI vs Django (x86 vs ARM)
 
 Cross-architecture performance comparison of the **FastAPI** and **Django** web frameworks on **x86-64** and **ARM** hardware. The study measures HTTP throughput, latency distribution, resource usage, energy efficiency, and WebSocket round-trip latency under increasing concurrency.
 
@@ -30,11 +30,11 @@ HTTP throughput (requests/s, `ping` endpoint):
 
 **Main findings:**
 
-1. **FastAPI leads on both architectures** — ~8.6x higher throughput than default Django, ~3.4x than tuned. The ratio is platform-independent.
+1. **FastAPI leads on both architectures** - ~8.6x higher throughput than default Django, ~3.4x than tuned. The ratio is platform-independent.
 2. **x86 vs ARM: a consistent ~5.5x gap** across all configurations.
-3. **Middleware overhead costs ~2.5x** — removing middleware (tuned) roughly doubles to triples Django throughput.
-4. **Energy efficiency is comparable** — x86 is ~6x faster but draws ~6x more power; per watt, both architectures are nearly equal.
-5. **WebSocket: FastAPI scales better under high concurrency** — comparable up to 500 connections, but at 1,000 concurrent connections FastAPI keeps p95 round-trip at ~2 ms (x86) / ~5 ms (ARM) while Django rises to 8-23 ms.
+3. **Middleware overhead costs ~2.5x** - removing middleware (tuned) roughly doubles to triples Django throughput.
+4. **Energy efficiency is comparable** - x86 is ~6x faster but draws ~6x more power; per watt, both architectures are nearly equal.
+5. **WebSocket: FastAPI scales better under high concurrency** - comparable up to 500 connections, but at 1,000 concurrent connections FastAPI keeps p95 round-trip at ~2 ms (x86) / ~5 ms (ARM) while Django rises to 8-23 ms.
 
 ## Repository structure
 
@@ -57,9 +57,9 @@ Naming convention: `PLATFORM_FRAMEWORK_type.csv` (e.g. `ASUS_FASTAPI_summary.csv
 
 **HTTP summary** — `endpoint, method, requests_per_sec, success_ratio, latency_mean_ms, latency_max_ms, total_requests`
 
-**HTTP latency percentiles** — `endpoint, p50_ms, p90_ms, p95_ms, p99_ms`
+**HTTP latency percentiles** - `endpoint, p50_ms, p90_ms, p95_ms, p99_ms`
 
-**WebSocket summary** — `framework, connections, msgs_per_s, rtt_avg_ms, rtt_p50_ms, rtt_p90_ms, rtt_p95_ms` (round-trip latency in milliseconds)
+**WebSocket summary** - `framework, connections, msgs_per_s, rtt_avg_ms, rtt_p50_ms, rtt_p90_ms, rtt_p95_ms` (round-trip latency in milliseconds)
 
 ## Tools
 
@@ -71,6 +71,6 @@ Naming convention: `PLATFORM_FRAMEWORK_type.csv` (e.g. `ASUS_FASTAPI_summary.csv
 
 ## Notes
 
-- **Power on ARM is estimated**, not measured — the ARM board has no hardware power sensor. Efficiency figures for ARM use a 7-9 W estimate based on independent measurements and should be read as approximate.
-- **CPU saturation differs** — the ARM server ran at 97-99% CPU (CPU-bound), the x86 server at ~80% (limited elsewhere), so x86 throughput may be a lower bound.
+- **Power on ARM is estimated**, not measured - the ARM board has no hardware power sensor. Efficiency figures for ARM use a 7-9 W estimate based on independent measurements and should be read as approximate.
+- **CPU saturation differs** - the ARM server ran at 97-99% CPU (CPU-bound), the x86 server at ~80% (limited elsewhere), so x86 throughput may be a lower bound.
 - Latency values use constant-rate load generation (coordinated-omission correction), so absolute values are higher but more representative than naive tools.
