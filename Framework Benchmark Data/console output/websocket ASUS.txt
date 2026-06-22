@@ -1,9 +1,4 @@
 ---------------------------------------------FastAPI ASUS----------------------------------------------------------------
-ranny@raspberrypi:~ $ ulimit -n 65535
-./run_ws_bench.sh fastapi 8000 192.168.100.95
-WebSocket benchmark (k6) â€” fastapi proti ws://192.168.100.95:8000/ws
-Stupne spojenĂ­: 10 50 100 200 500 1000
-
 â•â•â• fastapi | 10 sĂşbeĹľnĂ˝ch spojenĂ­ â•â•â•
      checks................: 100.00% âś“ 10         âś— 0   
    âś“ ws_connecting.........: avg=1.94ms   min=1.4ms med=1.81ms max=2.77ms p(90)=2.69ms p(95)=2.73ms
@@ -68,16 +63,7 @@ fastapi    200          120         479782     239844     1998.7      0.59      
 fastapi    500          120         1199418    599551     4996.3      0.87        1.00        2.00        2.00        0.00        92.26           500.000
 fastapi    1000         120         2398898    1199045    9992.0      0.83        1.00        1.00        2.00        0.00        99.09           1000.000
 
-SĂşhrn: results_ws_fastapi_20260620_114609/ws_summary.csv
-JSON vĂ˝stupy: results_ws_fastapi_20260620_114609/ws_*.json
-
-
 ---------------------------------------------Django ASUS-----------------------------------------------------------------
-ranny@raspberrypi:~ $ ulimit -n 65535
-./run_ws_bench.sh django 8001 192.168.100.95
-WebSocket benchmark (k6) â€” django proti ws://192.168.100.95:8001/ws
-Stupne spojenĂ­: 10 50 100 200 500 1000
-
 â•â•â• django | 10 sĂşbeĹľnĂ˝ch spojenĂ­ â•â•â•
      checks................: 100.00% âś“ 10         âś— 0   
    âś“ ws_connecting.........: avg=3.56ms min=3.15ms med=3.53ms max=4.05ms p(90)=3.95ms p(95)=4ms 
@@ -142,16 +128,7 @@ django     200          120         479734     239808     1998.4      0.62      
 django     500          120         1199374    599504     4995.9      1.87        2.00        4.00        4.00        0.00        84.00           500.000
 django     1000         120         2398704    1199010    9991.8      3.13        2.00        7.00        8.00        0.00        144.60          1000.000
 
-SĂşhrn: results_ws_django_20260620_120213/ws_summary.csv
-JSON vĂ˝stupy: results_ws_django_20260620_120213/ws_*.json
-
-
 ---------------------------------------------Django tuned ASUS-----------------------------------------------------------
-ranny@raspberrypi:~ $ ulimit -n 65535
-./run_ws_bench.sh django_tuned 8002 192.168.100.95
-WebSocket benchmark (k6) â€” django_tuned proti ws://192.168.100.95:8002/ws
-Stupne spojenĂ­: 10 50 100 200 500 1000
-
 â•â•â• django_tuned | 10 sĂşbeĹľnĂ˝ch spojenĂ­ â•â•â•
      checks................: 100.00% âś“ 10         âś— 0   
    âś“ ws_connecting.........: avg=4.12ms min=3.83ms med=4.09ms max=4.6ms p(90)=4.5ms p(95)=4.55ms
@@ -215,7 +192,3 @@ django_tuned  100          120         239898     119900     999.2       1.38   
 django_tuned  200          120         479748     239800     1998.3      1.40        1.00        2.00        3.00        0.00        25.70           200.000
 django_tuned  500          120         1199484    599505     4995.9      1.60        1.00        3.00        4.00        0.00        79.41           500.000
 django_tuned  1000         120         2398588    1199004    9991.7      4.83        4.00        9.00        10.00       0.00        161.88          1000.000
-
-SĂşhrn: results_ws_django_tuned_20260620_121730/ws_summary.csv
-JSON vĂ˝stupy: results_ws_django_tuned_20260620_121730/ws_*.json
-
