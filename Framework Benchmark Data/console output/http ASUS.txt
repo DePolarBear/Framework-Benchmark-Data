@@ -1,8 +1,4 @@
 ---------------------------------------------FastAPI ASUS----------------------------------------
-ranny@raspberrypi:~ $ chmod +x run_bench_vegeta.sh run_latency_curve_vegeta.sh
-./run_bench_vegeta.sh fastapi 8000 192.168.100.95 vc
-Benchmark v2 (vegeta MAX) â€” fastapi proti 192.168.100.95:8000
-
 â•â•â• ping (GET /api/ping) â€” MAX test â•â•â•
   monitor PID=2198
   âś“ 27898 req/s | success 100.0% | p50=6.76ms p99=12.63ms
@@ -34,13 +30,7 @@ hello     7.357   9.970   10.916  13.022
 echo      9.353   12.323  13.308  15.465
 heavy     16.871  20.033  21.397  24.536
 
-Stiahni monitor CSV:
-  scp vc@192.168.100.95:/home/vc/benchmark_v2/'monitor_vegeta_fastapi_*_20260619_105329.csv' results_vegeta_fastapi_20260619_105329/
-
 ---------------------------------------------Django ASUS------------------------------------------
-ranny@raspberrypi:~ $ ./run_bench_vegeta.sh django 8001 192.168.100.95 vc
-Benchmark v2 (vegeta MAX) â€” django proti 192.168.100.95:8001
-
 â•â•â• ping (GET /api/ping) â€” MAX test â•â•â•
   monitor PID=3741
   âś“ 3227 req/s | success 100.0% | p50=60.05ms p99=98.06ms
@@ -72,13 +62,7 @@ hello     60.121  70.460  79.742  94.440
 echo      61.603  74.066  82.766  100.458
 heavy     69.301  81.665  88.415  104.876
 
-Stiahni monitor CSV:
-  scp vc@192.168.100.95:/home/vc/benchmark_v2/'monitor_vegeta_django_*_20260619_111346.csv' results_vegeta_django_20260619_111346/
-
 ---------------------------------------------Django Tuned ASUS----------------------------------
-ranny@raspberrypi:~ $ ./run_bench_vegeta.sh django_tuned 8002 192.168.100.95 vc
-Benchmark v2 (vegeta MAX) â€” django_tuned proti 192.168.100.95:8002
-
 â•â•â• ping (GET /api/ping) â€” MAX test â•â•â•
   monitor PID=1499674
   âś“ 8115 req/s | success 100.0% | p50=23.22ms p99=43.97ms
@@ -109,7 +93,3 @@ ping      23.218  28.205  36.976  43.967
 hello     22.969  28.097  36.440  44.247
 echo      23.757  30.014  38.098  47.839
 heavy     31.620  37.458  43.098  51.163
-
-Stiahni monitor CSV:
-  scp vc@192.168.100.95:/home/vc/benchmark_v2/'monitor_vegeta_django_tuned_*_20260619_112932.csv' results_vegeta_django_tuned_20260619_112932/
-
