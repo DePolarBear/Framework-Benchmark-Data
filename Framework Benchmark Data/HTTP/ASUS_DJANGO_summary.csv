@@ -1,5 +1,0 @@
-endpoint,method,requests_per_sec,success_ratio,latency_mean_ms,latency_max_ms,total_requests
-ping,GET,3226.89,100.00,61.946,163.281,387348
-hello,GET,3251.46,100.00,61.476,160.613,390289
-echo,POST,3154.81,100.00,63.361,159.290,378685
-heavy,GET,2822.81,100.00,70.817,179.712,338848
